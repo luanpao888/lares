@@ -31,11 +31,8 @@ export async function getChatCompletionResponse({
   ];*/
 
   const response = await openai.chat.completions.create({
-    model: "gpt-4-turbo-preview",
+    model: "gpt-4o",
     messages,
-    /*tools: tools.map((tool) => {
-      return { type: "function", function: tool.getSignature() };
-    }),*/
     tools: [{ type: "function", function: tool.getSignature() }],
     tool_choice: { type: "function", function: { name: tool.name } },
   });

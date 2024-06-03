@@ -13,6 +13,14 @@ When you run the sim using `npm run dev` there's a web view:
 - Left side: A debug view that shows the entire world state (including information unavailable to the assistant, such as the location of movable items like pets and people)
 - Right side: The assistant view, including a text input for the user to give instructions, and a view of the assistant's current state (its transcript of messages with OpenAI)
 
+## Development
+
+```bash
+cp .env.template .env # populate with OPENAI_API_KEY
+npm install
+npm run dev
+```
+
 ## Navigating around the repo
 
 Looking in `party/`...
@@ -45,9 +53,6 @@ The loop continues until:
 - the assistant receives a 'halt' function call -- this also includes the ability to report back to the user
 - the assistant hits the maximum number of function calls (currently set to 10)
 
-## Issues and next steps
+## Next steps
 
-- The assistant isn't that smart... There's work to be done! World state probably shouldn't be in JSON
-- UI needs to be built
-- The function calling loop is cumbersome: what would be an idoimatic way to do this?
 - Real world integration: could the world sim represent _my house?_ Could the function calls be actual HomeKit calls?

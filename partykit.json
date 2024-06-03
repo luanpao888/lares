@@ -1,6 +1,6 @@
 {
   "$schema": "https://www.partykit.io/schema.json",
-  "name": "sketch-home-sim",
+  "name": "lares",
   "main": "party/server.ts",
   "compatibilityDate": "2024-03-15",
   "parties": {
