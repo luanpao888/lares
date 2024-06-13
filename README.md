@@ -1,4 +1,6 @@
-# sketch-home-sim
+# Lares
+
+Read: [Lares smart home assistant: A toy AI agent demonstrating emergent behavior](https://interconnected.org/more/2024/lares/)
 
 ## What is this?
 
