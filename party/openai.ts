@@ -10,16 +10,16 @@ export async function getChatCompletionResponse({
   tool: any;
 }) {
   // If no organization is set, usage will count against the default key owner
-  if (!process.env.OPENAI_API_ORGANIZATION) {
-    console.info(
-      "No OPENAI_API_ORGANIZATION set, usage will count against the default key owner"
-    );
-  }
+  // if (!process.env.OPENAI_API_ORGANIZATION) {
+  //   console.info(
+  //     "No OPENAI_API_ORGANIZATION set, usage will count against the default key owner"
+  //   );
+  // }
 
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
     baseURL: process.env.OPENAI_API_BASE_URL,
-    organization: process.env.OPENAI_API_ORGANIZATION,
+    // organization: process.env.OPENAI_API_ORGANIZATION,
   });
 
   /*const prompt = [
@@ -32,7 +32,7 @@ export async function getChatCompletionResponse({
   ];*/
 
   const response = await openai.chat.completions.create({
-    model: "gpt-4o",
+    model: process.env.OPENAI_API_MODEL || "gpt-4o",
     messages,
     tools: [{ type: "function", function: tool.getSignature() }],
     tool_choice: { type: "function", function: { name: tool.name } },
