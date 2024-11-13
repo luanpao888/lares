@@ -18,6 +18,7 @@ export async function getChatCompletionResponse({
 
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
+    baseURL: process.env.OPENAI_API_BASE_URL,
     organization: process.env.OPENAI_API_ORGANIZATION,
   });
 
